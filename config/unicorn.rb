@@ -21,8 +21,7 @@ worker_processes ENV['RAILS_ENV'] || ENV['RACK_ENV'] || 'production' == "product
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-app = "/Users/joey/project/cvs"
-# app = "/www/cvs" # available in 0.94.0+
+app = "/www/cvs" # available in 0.94.0+
 working_directory app
 
 # listen on both a Unix domain socket and a TCP port,
