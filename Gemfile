@@ -16,6 +16,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'font-awesome-sass'
 gem 'animate-rails'
+gem 'therubyracer'
 
 # 辅助工具
 gem 'quiet_assets'  # 禁用assets log
