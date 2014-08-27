@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :staffers
   root 'welcome#index'
 
   resources :nodes do
@@ -10,5 +11,10 @@ Rails.application.routes.draw do
       get 'show_list_single'
     end
   end
- 
+  
+  namespace :admin do 
+    root 'home#index'
+    resources :nodes
+  end
+
 end
