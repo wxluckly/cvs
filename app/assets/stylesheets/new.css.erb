@@ -38,7 +38,7 @@
 	content: "\e603";
 }
 
-.news_banner{ text-align:center;padding-top: 12%;}
+.news_banner{ text-align:center;}
 .news_banner img{ width: 100%;}
 .news_box{ width: 100%; margin-top: 6%; margin-bottom: 10%;}
 .news_link{ width: 25%; float: left; text-align: center; margin-bottom: 10px; background: url('<%= image_url "line.jpg" %>') right 20% no-repeat; background-size: auto 40%;}
@@ -51,26 +51,23 @@
 .news_link b{ padding-top: 9%; width: 40%; display: inline-block; font: bold 14px/20px "Microsoft YaHei";}
 @media (max-width:55em){
 	.news_box{ margin-top: 7%;}
-	.news_banner{ padding-top: 18%;}
 	.news_link{ width: 25%;}
 	.news_link span{ font-size: 90px;}
 	.news_link b{ padding-top: 9%; width: 50%;}
 }
 @media (max-width:640px){
-	.news_banner{ padding-top: 16%;}
 	.news_link{ width: 25%;}
 	.news_link span{ font-size: 70px;}
 }
 @media (max-width:480px){
 	.news_box{ margin-top: 8%;}
-	.news_banner{ padding-top: 28%;}
+	.news_banner{padding-top: 30px;}
 	.news_link{ width: 25%; background: url('<%= image_url "line.jpg" %>') right 6% no-repeat; background-size: auto 20%;}
 	.news_link span{ font-size:50px;}
 	.news_link b{ padding-top: 5%; width: 46%;}
 }
 
 @media (max-width:320px){
-	.news_banner{ padding-top: 34%;}
-	.news_link{ width: 50%;background: none;}
-	.news_link b{width: 40%;}
+	.news_link{ width: 25%;background: none;}
+	.news_link b{width: 80%;}
 }
