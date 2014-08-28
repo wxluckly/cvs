@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chinese Vegan Society 后台管理</title>
+  <%= render "basic_css" %>
+  <%= stylesheet_link_tag 'admin', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/admin">Chinese Vegan Society 后台管理</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li <% if current_page?(controller: 'nodes') %>class="active"<% end %>>
+              <%= link_to "文章管理", admin_nodes_path %>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            <% if current_staffer and staffer_signed_in? %>
+            <%= link_to '退出', destroy_staffer_session_path, method: :delete, class: "btn" %>
+            <% else %>
+            <%= link_to '登录', new_staffer_session_path, class: "btn" %> 
+            <%= link_to '注册', new_staffer_registration_path, class: "btn" %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <% if flash[:notice] %>
+    <div class="alert alert-info">
+      <a class="close" data-dismiss="alert">×</a><%= flash[:notice] %>
+    </div>
+    <% end %>
+    <%= yield %>
+  </div>
+</body>
+</html>
