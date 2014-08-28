@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag 'new', media: 'all' %>
+<div class="site">
+  <div class="site-container">    
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+    <%= render "header" %>
+    <section class="news_page">
+      <div class="image_box">
+        <div class="news_banner"><%= image_tag "banner_news2.jpg" %></div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="news_box clearfix">
+          <div class="news_link">
+            <p>
+              <a href="#"><span class="icon-bag"></span><b class="theme_title">市场活动市场活动活动</b></a>
+            </p>
+          </div>
+          <div class="news_link">
+            <p>
+              <a href="#"><span class="icon-earth"></span><b class="theme_title">市场活动市场活动活动新闻</b></a>
+            </p>
+          </div>
+          <div class="news_link">
+            <p>
+              <a href="#"><span class="icon-gift"></span><b class="theme_title">活动</b></a>
+            </p>
+          </div>
+          <div class="news_link">
+            <p>
+              <a href="#"><span class="icon-people"></span><b class="theme_title">市场活动市场活动活动工作</b></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "info_social" %>
+    <%= render "footer" %>
+  </div>
+  <%= render "mobile_nav_list" %>
+  <%= javascript_include_tag 'origin/js_Dpwj9_' %> 
+</div>
+<%= render "cbox_overlay" %>

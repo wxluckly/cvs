@@ -1,6 +1,6 @@
 @charset "utf-8";
 #sliding-popup{display:block;margin:0;padding:0px;right:0;text-align:center;width:100%;z-index:99999;}
-.sliding-popup-bottom{background:url(/sites/all/modules/eu-cookie-compliance/images/gradient.png) center center scroll repeat-y transparent;position:fixed;}
+.sliding-popup-bottom{background:url('<%= image_url "origin/gradient.png" %>') center center scroll repeat-y transparent;position:fixed;}
 .sliding-popup-top{background-color:#000;position:relative;}
 #sliding-popup .popup-content{background-color:transparent;border:0 none;display:block;margin:0 auto;padding:0;max-width:80%;}
 #sliding-popup .popup-content #popup-buttons{float:right;margin:0;max-width:40%;}

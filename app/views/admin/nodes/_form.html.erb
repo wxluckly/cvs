@@ -1,0 +1,15 @@
+<%= simple_form_for(@node, as: "node", url: @node.new_record? ? admin_nodes_path : admin_node_path(@node), html: {class: "form-horizontal"}) do |f| %>
+<% @node.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+<%= f.input :title, label: '标题' %>
+
+<%#= f.input :url, label: '链接' %>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.button :submit, "保存" %>
+  </div>
+</div>
+<% end %>

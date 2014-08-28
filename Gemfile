@@ -15,11 +15,15 @@ gem 'jquery-rails', '2.2.1'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'font-awesome-sass'
+gem 'anjlab-bootstrap-rails', '2.3.1.2', :require => 'bootstrap-rails'
 gem 'animate-rails'
 gem 'therubyracer'
 
 # 辅助工具
 gem 'quiet_assets'  # 禁用assets log
+gem 'will_paginate'
+gem 'simple_form'
+gem 'ancestry'
 
 # 权限验证
 gem 'devise'
