@@ -1,6 +1,6 @@
-source 'http://ruby.taobao.org'
+﻿source 'http://ruby.taobao.org'
 
-ruby '2.1.2'
+# ruby '2.1.2'
 
 gem 'rails', '4.1.4'
 
@@ -25,7 +25,7 @@ gem 'quiet_assets'  # 禁用assets log
 gem 'devise'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 group :development do
   gem 'spring'
