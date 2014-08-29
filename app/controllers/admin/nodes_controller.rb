@@ -1,6 +1,5 @@
 class Admin::NodesController < Admin::BaseController
 
-
   def index
     @nodes = Node.paginate(page: params[:page])
   end
@@ -50,7 +49,7 @@ class Admin::NodesController < Admin::BaseController
 
   private
   def node_params
-    params.require(:entry).permit(:entry_category_id, :title, :sub_title, :url, :image, :order, :desc)
+    params.require(:node).permit(:content, :title, :sub_title, :banner_type)
   end
 
 end

@@ -28,6 +28,9 @@ gem 'ancestry'
 # 权限验证
 gem 'devise'
 
+# 富文本编辑器
+gem 'rails_kindeditor'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

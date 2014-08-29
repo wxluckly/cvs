@@ -1,6 +1,7 @@
 class NodesController < ApplicationController
-  def show 
-    
+
+  def show
+    @node = Node.find(params[:id])
   end
 
 end
