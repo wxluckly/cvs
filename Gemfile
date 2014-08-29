@@ -32,7 +32,7 @@ gem 'devise'
 gem 'rails_kindeditor'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 group :development do
   gem 'spring'
