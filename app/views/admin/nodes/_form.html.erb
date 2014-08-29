@@ -5,7 +5,7 @@
 <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
 <%= f.input :title, label: '标题' %>
 
-<%= f.input :content, as: :kindeditor, label: '内容', input_html: {window_onload: true} %>
+<%= f.input :content, label: '内容' %>
 
 <%= f.input :banner_type, label: '页头图片' %>
 
@@ -14,4 +14,18 @@
     <%= f.button :submit, "保存" %>
   </div>
 </div>
+<% end %>
+<% content_for :script do %>
+<script>
+  $(function(){
+    var editor;
+    KindEditor.ready(function(K) {
+      editor = K.create('#node_content', {
+        filterMode  : false,
+        width       : '782px',
+        height      : '482px'
+      });
+    });
+  })
+</script>
 <% end %>
