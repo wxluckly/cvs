@@ -17,4 +17,7 @@ Rails.application.routes.draw do
     resources :nodes
   end
 
+  match "kindeditor_upload", path: "/kindeditor/upload", to: "kindeditor/assets#create", via: "post"
+  match "kindeditor_filemanager", path: "/kindeditor/filemanager", to: "kindeditor/assets#list", via: "get"
+
 end

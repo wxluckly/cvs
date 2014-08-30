@@ -17,3 +17,4 @@
 //= require jquery/jquery.form.js
 //= require jquery-ui/dialog
 //= require twitter/bootstrap
+//= require kindeditor
