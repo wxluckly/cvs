@@ -5,6 +5,8 @@
 <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
 <%= f.input :title, label: '标题' %>
 
+<%= f.input :parent_id, collection: Node.sellect_list, label: '所属类别' %>
+
 <%= f.input :content, as: :kindeditor, label: '内容', input_html: {window_onload: true, filterMode: false} %>
 
 <%= f.input :banner_type, label: '页头图片' %>
