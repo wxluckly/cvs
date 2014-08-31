@@ -12,11 +12,9 @@ class Node < ActiveRecord::Base
   # class methods .............................................................
   def self.sellect_list
     result = []
-    all.each do |node|
-      if node.depth == 1
-        result << [node.depth_title, node.id]
-        result = node.serialize_siblings(result)
-      end
+    roots.each do |node|
+      result << [node.depth_title, node.id]
+      result = node.serialize_siblings(result)
     end
     result
   end
