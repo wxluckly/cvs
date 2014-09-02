@@ -8,7 +8,7 @@
       <div class="skew">
         <div class="container">
           <h1>
-            Take action         
+            <%= @node.title %> 
           </h1>
         </div>
       </div>
@@ -26,54 +26,19 @@
                   <p>Some of the things you can do to help advance veganism in a positive and significant way.</p>
                 </div></div></div>
 
-
+                <% @node.children.each do |node| %>
                 <div class="block-list__panel">
                   <div class="block-list__image">
                     <a href="/take-action/volunteer"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/Vol_724x352_1.jpg" width="724" height="352" alt=""></a>      
                   </div>  
                   <h2 class="block-list__title">
-                    <a href="/take-action/volunteer">Volunteer</a>
+                    <a href="/nodes/<%= node.id %>"><%= node.title %></a>
                   </h2> 
                   <div class="block-list__excerpt">
                     <p>There are a variety of ways to volunteer with us.  <a href="/take-action/volunteer" class="more-link">(Read More)</a></p>
                   </div>  
                 </div>
-
-                <div class="block-list__panel">
-                  <div class="block-list__image">
-                    <a href="/take-action/volunteer"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/Vol_724x352_1.jpg" width="724" height="352" alt=""></a>      
-                  </div>  
-                  <h2 class="block-list__title">
-                    <a href="/take-action/volunteer">Volunteer</a>
-                  </h2> 
-                  <div class="block-list__excerpt">
-                    <p>There are a variety of ways to volunteer with us.  <a href="/take-action/volunteer" class="more-link">(Read More)</a></p>
-                  </div>  
-                </div>
-
-                <div class="block-list__panel">
-                  <div class="block-list__image">
-                    <a href="/take-action/volunteer"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/Vol_724x352_1.jpg" width="724" height="352" alt=""></a>      
-                  </div>  
-                  <h2 class="block-list__title">
-                    <a href="/take-action/volunteer">Volunteer</a>
-                  </h2> 
-                  <div class="block-list__excerpt">
-                    <p>There are a variety of ways to volunteer with us.  <a href="/take-action/volunteer" class="more-link">(Read More)</a></p>
-                  </div>  
-                </div>
-
-                <div class="block-list__panel">
-                  <div class="block-list__image">
-                    <a href="/take-action/volunteer"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/Vol_724x352_1.jpg" width="724" height="352" alt=""></a>      
-                  </div>  
-                  <h2 class="block-list__title">
-                    <a href="/take-action/volunteer">Volunteer</a>
-                  </h2> 
-                  <div class="block-list__excerpt">
-                    <p>There are a variety of ways to volunteer with us.  <a href="/take-action/volunteer" class="more-link">(Read More)</a></p>
-                  </div>  
-                </div>
+                <% end %>
 
               </div>
             </div>
