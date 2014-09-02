@@ -17,9 +17,13 @@
       <div class="container">
         <div class="page-content">
           <div class="custom-breadcrumbs">
-            <h2 class="element-invisible">You are here</h2>
-            <div class="breadcrumb"><a href="/">首页</a> » <a href="/whats-new">什么是新的?</a> » <a href="/whats-new/campaigns">活动</a>
-            </div> » 热爱素食生活              
+            <h2 class="element-invisible">你在这：</h2>
+            <div class="breadcrumb">
+              <a href="/">首页</a>
+              <% @node.ancestors[1, 100].each do |parent| %>
+              » <a href="/nodes/<%= parent.id %>"><%= parent.title %></a>
+              <% end %>
+            </div> » <%= @node.title %>            
           </div>
           <div class="region region-content">
             <div id="node-<%= @node.id %>" class="node node-campaign node-promoted node-full clearfix" about="/whats-new/campaigns/love-vegan" typeof="sioc:Item foaf:Document">
