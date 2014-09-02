@@ -1,7 +1,7 @@
 class Admin::NodesController < Admin::BaseController
 
   def index
-    @nodes = Node.paginate(page: params[:page])
+    @nodes = Node.paginate(page: params[:page]).order("id desc")
   end
 
   def new
