@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829084200) do
+ActiveRecord::Schema.define(version: 20140902145708) do
 
   create_table "kindeditor_assets", force: true do |t|
     t.string   "asset"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140829084200) do
     t.string   "title"
     t.text     "content"
     t.integer  "banner_type"
-    t.integer  "page_type"
+    t.string   "page_type"
     t.string   "target_page"
     t.string   "ancestry"
     t.datetime "created_at"
