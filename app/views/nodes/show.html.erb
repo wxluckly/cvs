@@ -20,7 +20,7 @@
             <h2 class="element-invisible">你在这：</h2>
             <div class="breadcrumb">
               <a href="/">首页</a>
-              <% if @node.ancestors[1, 100].any? %>
+              <% if @node.ancestors[1, 100].present? %>
               <% @node.ancestors[1, 100].each do |parent| %>
               » <a href="/nodes/<%= parent.id %>"><%= parent.title %></a>
               <% end %>
