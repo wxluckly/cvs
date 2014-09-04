@@ -29,7 +29,7 @@
                 <% @node.children.each do |node| %>
                 <div class="block-list__panel">
                   <div class="block-list__image">
-                    <a href="/nodes/<%= node.id %>"><%= node.cover_url(:on_use), width: 724, height: 352, typeof: "foaf:Image" %></a>      
+                    <a href="/nodes/<%= node.id %>"><%= image_tag node.cover_url(:on_use), width: 724, height: 352, typeof: "foaf:Image" %></a>      
                   </div>  
                   <h2 class="block-list__title">
                     <a href="/nodes/<%= node.id %>"><%= node.title %></a>
