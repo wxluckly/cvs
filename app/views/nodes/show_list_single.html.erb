@@ -31,52 +31,31 @@
           <div class="block-list list3">
             <div class="region region-content">
 
-              <div id="node-42" class="node node-list-events node-promoted node-full clearfix" about="/whats-new/events" typeof="sioc:Item foaf:Document">
+
+
+              <% @node.children.each do |node| %>
+              <div id="node-<%= node.id %>" class="node node-list-events node-promoted node-full clearfix" about="/whats-new/events" typeof="sioc:Item foaf:Document">
                 <div class="content clearfix">
                   <div class="block-list__panel">
                     <div class="block-list__image">
-                      <a href="/whats-new/events/london-vegfest-0"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/LondonVegfest.jpg" width="724" height="352" alt=""></a>
+                      <a href="/nodes/<%= node.id %>"><%= node.cover_url(:on_use), width: 724, height: 352, typeof: "foaf:Image" %></a>
                     </div>  
                     <div class="block-list__inner-container">
 
                       <div class="block-list__date">
-                        <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-09-27T00:00:00+01:00">2014年9月27日 星期六</span>  
+                        <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-09-27T00:00:00+01:00"></span>  
                       </div>  
                       <h2 class="block-list__title">
-                        <a href="/whats-new/events/london-vegfest-0">伦敦 VegFest</a> 
+                        <a href="/nodes/<%= node.id %>"><%= node.title %></a> 
                       </h2> 
                       <div class="block-list__excerpt">
-                        <p><em>素食主义者协会</em> 为能成为今年在英国伦敦举行的素食节的荣誉客人而倍感兴奋。我们一直...<a href="/whats-new/events/london-vegfest-0" class="more-link">(阅读更多)</a></p> 
+                        <p><%= node.desc %><a href="/nodes/<%= node.id %>" class="more-link">(阅读更多)</a></p> 
                       </div>
                     </div>  
                   </div>
                 </div>
               </div>
-
-
-              <div id="node-42" class="node node-list-events node-promoted node-full clearfix" about="/whats-new/events" typeof="sioc:Item foaf:Document">
-                <div class="content clearfix">
-                  <div class="block-list__panel">
-                    <div class="block-list__image">
-                      <a href="/whats-new/events/london-vegfest-0"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/LondonVegfest.jpg" width="724" height="352" alt=""></a>
-                    </div>  
-                    <div class="block-list__inner-container">
-
-                      <div class="block-list__date">
-                        <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-09-27T00:00:00+01:00">2014年9月27日 星期六</span>  
-                      </div>  
-                      <h2 class="block-list__title">
-                        <a href="/whats-new/events/london-vegfest-0">伦敦 VegFest</a> 
-                      </h2> 
-                      <div class="block-list__excerpt">
-                        <p><em>素食主义者协会</em> 为能成为今年在英国伦敦举行的素食节的荣誉客人而倍感兴奋。我们一直...<a href="/whats-new/events/london-vegfest-0" class="more-link">(阅读更多)</a></p> 
-                      </div>
-                    </div>  
-                  </div>
-                </div>
-              </div>
-
-
+              <% end %>
               
             </div>
           </div>
