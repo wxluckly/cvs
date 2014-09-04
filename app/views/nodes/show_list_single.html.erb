@@ -64,14 +64,28 @@
         <aside class="page-sidebar--right">
           <div class="sub-nav"> 
             <div class="region region-sidebar-menu">
-              <h2>什么是新的？</h2>
+              <h2>目录</h2>
 
               <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-2">
-                <ul class="menu clearfix"><li class="first collapsed menu-mlid-2030"><a href="/whats-new/campaigns" title="">活动</a></li>
-                  <li class="expanded active-trail active menu-mlid-1037"><a href="/whats-new/events" title="" class="active-trail active">事件</a><ul class="menu clearfix"><li class="first last leaf menu-mlid-2560"><a href="/node/42/past-events" title="">Past Events</a></li>
-                </ul></li>
-                <li class="last leaf menu-mlid-1916"><a href="/whats-new/jobs" title="">工作</a></li>
-              </ul></div>
+                <% if @node.parent %>
+                <ul class="menu clearfix">
+                  <li class="first expanded active-trail active menu-mlid-1037"><a href="/nodes/<%= @node.id %>" title=""><%= @node.title %></a>
+                    <% end %>
+                    <ul class="menu clearfix">
+                      <li class="first leaf active-trail active menu-mlid-2560"><a href="/nodes/<%= @node.id %>" title=""><%= @node.title %></a></li>
+                      <% @node.siblings.each do |sib| %>
+                      <li class="leaf menu-mlid-2560"><a href="/nodes/<%= sib.id %>" title=""><%= sib.title %></a></li>
+                      <% end %>
+                    </ul>
+                    <% if @node.parent %>
+                  </li>
+                  <% @node.parent.siblings.each do |sib| %>
+                  <li class="collapsed menu-mlid-2030"><a href="/nodes/<%= sib.id %>" title=""><%= sib.title %></a></li>
+                  <% end %>
+                </ul>
+                <% end %>
+              </div>
+              
             </div>
           </div>
           <div class="banner__panel">
