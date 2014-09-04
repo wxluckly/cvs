@@ -28,6 +28,10 @@ gem 'ancestry'
 # 权限验证
 gem 'devise'
 
+# 文件和图片处理
+gem 'mini_magick'
+gem 'carrierwave'
+
 # 富文本编辑器
 gem 'rails_kindeditor'
 

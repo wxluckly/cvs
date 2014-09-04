@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902145708) do
+ActiveRecord::Schema.define(version: 20140904134731) do
 
   create_table "kindeditor_assets", force: true do |t|
     t.string   "asset"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20140902145708) do
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cover"
+    t.string   "desc"
   end
 
   create_table "staffers", force: true do |t|

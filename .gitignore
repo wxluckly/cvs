@@ -16,6 +16,7 @@ config/database.yml
 /log/*.log
 /tmp
 /public/uploads/
+/public/file/
 config/secrets.yml
 Gemfile.lock
 db/schema.rb

@@ -10,6 +10,8 @@ class Node < ActiveRecord::Base
   has_ancestry
 
   # additional config .........................................................
+  mount_uploader :cover, NodeCoverUploader
+
   # class methods .............................................................
   def self.sellect_list
     result = []

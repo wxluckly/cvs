@@ -10,8 +10,11 @@
 
 <% if @node.new_record? || @node.page_type == 'show' %>
 <%= f.input :content, as: :kindeditor, label: '内容', input_html: {window_onload: true, filterMode: false} %>
-<% end %>
 <%#= f.input :banner_type, label: '页头图片' %>
+
+<%= f.input :desc, label: '在列表时显示的简介' %>
+<%= f.input :cover, label: '在列表时显示的图片' %>
+<% end %>
 
 <div class="control-group">
   <div class="controls">
