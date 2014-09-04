@@ -8,7 +8,7 @@
       <div class="skew">
         <div class="container">
           <h1>
-            Events          
+            <%= @node.title %>       
           </h1>
         </div>
       </div>
@@ -17,7 +17,15 @@
       <div class="container">
         <div class="page-content">
           <div class="custom-breadcrumbs">
-            <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">首页</a> » <a href="/whats-new">什么是新的？</a></div> » 事件            
+            <h2 class="element-invisible">你在这：</h2>
+            <div class="breadcrumb">
+              <a href="/">首页</a>
+              <% if @node.ancestors[1, 100].present? %>
+              <% @node.ancestors[1, 100].each do |parent| %>
+              » <a href="/nodes/<%= parent.id %>"><%= parent.title %></a>
+              <% end %>
+              <% end %>
+            </div> » <%= @node.title %>      
           </div>
 
           <div class="block-list list3">
