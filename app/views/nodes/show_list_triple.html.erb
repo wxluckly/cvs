@@ -22,8 +22,9 @@
             <div id="node-4" class="node node-list1 node-full clearfix" about="/take-action" typeof="sioc:Item foaf:Document">
 
               <div class="content clearfix">
-                <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2>Be a part of the solution!</h2>
-                  <p>Some of the things you can do to help advance veganism in a positive and significant way.</p>
+                <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded">
+                  <h2><%= @node.title %> </h2>
+                  <p><%= @node.desc %></p>
                 </div></div></div>
 
                 <% @node.children.each do |node| %>
