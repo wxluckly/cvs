@@ -3,6 +3,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th><div class="text-center">类型<div></th>
       <th>标题</th>
       <th>操作</th>
     </tr>
@@ -10,6 +11,7 @@
   <tbody>
     <% @nodes.each do |node| %>
     <tr>
+      <td><div class="text-center"><i class="<% if node.page_type == "show" %>icon-file<% else %>icon-list<% end %>"></i><div></td>
       <td><%= link_to node.title, node, target: "_blank" %></td>
       <td>
         <%= link_to '编辑', edit_admin_node_path(node, category: params[:category]) %>
