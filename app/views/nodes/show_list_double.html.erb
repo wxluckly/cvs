@@ -4,7 +4,7 @@
       <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
     </div>
     <%= render "header" %>
-    <header class="page-title" style="background-image: url(<%= @node.banner ? @node.banner.image_url(:on_use) : 'http://www.vegansociety.com/sites/default/files/shop_0.jpg' %>);">
+    <header class="page-title" style="background-image: url(<%= @node.banner ? @node.banner.image_url(:on_use) :image_url("try-vegan.jpg") %>);">
       <div class="skew">
         <div class="container">
           <h1>
