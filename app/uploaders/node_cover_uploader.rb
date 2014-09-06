@@ -10,7 +10,7 @@ class NodeCoverUploader < CarrierWave::Uploader::Base
 
 
   version :on_use do
-    process resize_to_fill: [362, 176]
+    process resize_to_fill: [724, 352]
   end
 
   version :thumb do

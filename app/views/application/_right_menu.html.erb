@@ -1,0 +1,18 @@
+<h2>目录</h2>
+
+<div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-2">
+  <ul class="menu clearfix">
+    <% @node.parent.siblings.each do |sib| %>
+    <li class="<% if sib.id == @node.parent.id %>expanded active-trail active<% else %>collapsed<% end %> menu-mlid-2030">
+      <a href="/nodes/<%= sib.id %>" title="" <% if sib.id == @node.parent.id %>class="active-trail"<% end %>><%= sib.title %></a>
+      <% if sib.id == @node.parent.id %>
+      <ul class="menu clearfix">
+        <% @node.siblings.each do |sib| %>
+        <li class="leaf menu-mlid-2560"><a href="/nodes/<%= sib.id %>" title=""<% if sib.id == @node.id %>class="active-trail active"<% end %>><%= sib.title %></a></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
