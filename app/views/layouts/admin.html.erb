@@ -15,6 +15,9 @@
         <a class="brand" href="/admin">Chinese Vegan Society 后台管理</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
+            <li <% if current_page?(controller: 'banners') %>class="active"<% end %>>
+              <%= link_to "页头图片管理", admin_banners_path %>
+            </li>
             <li <% if current_page?(controller: 'nodes') %>class="active"<% end %>>
               <%= link_to "文章管理", admin_nodes_path %>
             </li>

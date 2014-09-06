@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904134731) do
+ActiveRecord::Schema.define(version: 20140906141937) do
+
+  create_table "banners", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "kindeditor_assets", force: true do |t|
     t.string   "asset"
@@ -26,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140904134731) do
   create_table "nodes", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "banner_type"
+    t.integer  "banner_id"
     t.string   "page_type"
     t.string   "target_page"
     t.string   "ancestry"

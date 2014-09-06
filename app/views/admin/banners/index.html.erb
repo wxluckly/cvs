@@ -1,0 +1,29 @@
+<%= link_to '添加', new_admin_banner_path(category: params[:category]), class: 'pull-right btn btn-warning' %>
+<% if @banners.present? %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>图片</th>
+      <th>名称</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banners.each do |banner| %>
+    <tr>
+      <td><%= image_tag banner.image_url(:thumb) %></td>
+      <td><%= banner.name %></td>
+      <td>
+        <%= link_to '编辑', edit_admin_banner_path(banner, category: params[:category]) %>
+        <%= link_to '删除', admin_banner_path(banner, category: params[:category]), method: :delete, data: { confirm: '确定删除吗?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @banners %>
+<% else %>
+<div>
+ 暂无内容
+</div>
+<% end %>

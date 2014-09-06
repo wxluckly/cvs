@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     root 'home#index'
     resources :nodes
+    resources :banners
   end
 
   match "kindeditor_upload", path: "/kindeditor/upload", to: "kindeditor/assets#create", via: "post"

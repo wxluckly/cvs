@@ -1,0 +1,99 @@
+<div class="site">
+  <div class="site-container">    
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+    <%= render "header" %>
+    <header class="page-title" style="background-image: url(<%= @node.banner ? @node.banner.image_url(:on_use) : 'http://www.vegansociety.com/sites/default/files/shop_0.jpg' %>);">
+      <div class="skew">
+        <div class="container">
+          <h1>
+            <%= @node.title %>       
+          </h1>
+        </div>
+      </div>
+    </header>
+    <section class="page">  
+      <div class="container">
+        <div class="page-content">
+
+
+          <div class="breadcrumb">
+            <a href="/">首页</a>
+            <% if @node.ancestors[1, 100].present? %>
+            <% @node.ancestors[1, 100].each do |parent| %>
+            » <a href="/nodes/<%= parent.id %>"><%= parent.title %></a>
+            <% end %>
+            <% end %>
+          </div> » <%= @node.title %> 
+
+
+          <div class="block-list list2 shop-list">
+            <div class="region region-content">
+
+              <div id="node-<%= @node.id %>" class="node node-list-shop node-promoted node-full clearfix" about="/shop" typeof="sioc:Item foaf:Document">
+
+                <div class="content clearfix">
+                  <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even" property="content:encoded"><h2>Safe shopping</h2>
+                        <ul><li>For maximum security our web shop uses <a href="http://www.visa.co.uk/products/protection-benefits/verified-by-visa/" target="_blank">Verified by Visa</a>.</li>
+                          <li>Please <a href="/society/contact-us" target="_blank">contact</a> us if you experience any technical problems and we'll try and resolve them ASAP.</li>
+                          <li>Returning users note: account logins are no longer required to purchase online.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% @node.children.each do |node| %>
+                  <div class="block-list__panel">
+                    <div class="block-list__image">
+                      <a href="/nodes/<%= node.id %>"><%= image_tag node.cover_url(:on_use), width: 419, height: 204, typeof: "foaf:Image" %></a>     
+                    </div>  
+                    <h2 class="block-list__title">
+                      <a href="/nodes/<%= node.id %>"><%= node.title %></a>
+                    </h2>  
+                    <div class="block-list__excerpt">
+                    </div>  
+                  </div>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="page-sidebar--right">
+          <div class="sub-nav shopping-cart">
+            <div class="sub-nav__cart">
+              <div class="sub-nav__item">
+                <div class="region region-shop-cart">
+                  <h2><span class="cart-block-title-bar">Shopping Cart</span></h2>
+
+                  <table class="cart-block-items"><tbody><tr class="odd"><td class="cart-block-item-qty">1 ×</td><td class="cart-block-item-title"><a href="/shop/books/500-vegan-dishes">500 Vegan Dishes</a></td><td class="cart-block-item-price"><span class="uc-price">£9.99</span></td></tr></tbody></table><table class="cart-block-summary"><tbody><tr><td class="cart-block-summary-items"><span class="num-items">1</span> Item</td><td class="cart-block-summary-total"><label>Total:</label> <span class="uc-price">£9.99</span></td></tr><tr class="cart-block-summary-links"><td colspan="2"><ul class="links"><li class="cart-block-view-cart first"><a href="/cart" rel="nofollow">View cart</a></li>
+                  <li class="cart-block-checkout last"><a href="/cart/checkout" rel="nofollow">Checkout</a></li>
+                </ul></td></tr></tbody></table>  </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav"> 
+            <div class="region region-sidebar-menu">
+              <%= render "right_menu" %>
+            </div>
+          </div>
+          <div class="banner__panel">
+            <div class="region region-sidebar-banners">
+              <div id="banner"><a class="link" href="/shop/supplements"><img class="jpg" alt="The Vegan Shop" src="http://www.vegansociety.com/sites/default/files/banners/VEG1_426_new.png"></a></div>  
+            </div>
+          </div>        
+        </aside>
+      </div>   
+    </section>
+    <%= render "info_social" %>
+    <%= render "footer" %>
+  </div>
+  <%= render "mobile_nav_list" %>
+  <%= javascript_include_tag 'origin/js_Dpwj9_' %> 
+</div>
+
