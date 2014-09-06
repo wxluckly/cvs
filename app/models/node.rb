@@ -7,6 +7,8 @@ class Node < ActiveRecord::Base
 
   # validations ...............................................................
   # callbacks .................................................................
+  after_save :cb_set_descendants_banner, if: :banner_id_changed?
+
   # scopes ....................................................................
   PageType = [
     ["单页型", 'show'],
@@ -44,6 +46,13 @@ class Node < ActiveRecord::Base
   end
 
   # protected instance methods ................................................
+  protected
+  def cb_set_descendants_banner
+    descendants.each do |d|
+      d.update(banner_id: self.banner_id)
+    end
+  end
+  
   # private instance methods ..................................................
 
 end
