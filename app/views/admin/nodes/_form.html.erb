@@ -13,6 +13,14 @@
 <% end %>
 
 <%= f.input :desc, label: '在列表时显示的简介' %>
+
+<% if @node.cover_url(:thumb) %>
+<div class="control-group">
+  <div class="controls">
+    <%= image_tag @node.cover_url(:thumb)  %>
+  </div>
+</div>
+<% end %>
 <%= f.input :cover, label: '在列表时显示的图片' %>
 
 <div class="control-group">
