@@ -1,0 +1,55 @@
+
+
+<div class="site">
+  <div class="site-container">    
+    <div id="skip-link">
+      <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    </div>
+    <%= render "header" %>
+    <header class="page-title" style="background-image: url('<%= image_url("try-vegan.jpg") %>');">
+      <div class="skew">
+        <div class="container">
+          <h1>
+            登录后台     
+          </h1>
+        </div>
+      </div>
+    </header>
+    <section class="page">  
+      <div class="container">
+        <div class="custom-breadcrumbs">
+          <h2 class="element-invisible">你在这：</h2>
+          <div class="breadcrumb"><a href="/">首页</a></div> » 登录后台 
+        </div>
+
+        <div class="page-content">
+          <div class="region region-content">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div>
+              <div class="form-item form-type-textfield form-item-name">
+                <label for="edit-name">邮箱 <span class="form-required" title="This field is required.">*</span></label>
+                <input type="text" id="edit-name" name="staffer[email]" value="" size="60" maxlength="60" class="form-text required">
+                <div class="description">输入你的邮箱</div>
+              </div>
+              <div class="form-item form-type-password form-item-pass">
+                <label for="edit-pass">密码 <span class="form-required" title="This field is required.">*</span></label>
+                <input type="password" id="edit-pass" name="staffer[password]" size="60" maxlength="128" class="form-text required">
+                <div class="description">输入和邮箱对应的密码</div>
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions">
+                <input type="submit" id="edit-submit" name="commit" value="登录" class="form-submit">
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "info_social" %>
+    <%= render "footer" %>
+  </div>
+  <%= render "mobile_nav_list" %>
+  <%= javascript_include_tag 'origin/js_Dpwj9_' %> 
+</div>
+
+<%= render "cbox_overlay" %>
