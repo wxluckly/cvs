@@ -64,7 +64,7 @@
               邮件
             </a>
             <a href="javascript:void(0)" target="_blank" class="social-media__icon facebook">
-              微信
+              微信<span class="qr-code"><%= image_tag "code.png" %></span>
             </a>
             <a href="http://weibo.com/xinmengxiangdahui" target="_blank" class="social-media__icon google-plus">
               微博
@@ -77,3 +77,13 @@
     </div>
   </div>
 </section>
+
+  <script type="text/javascript">
+    $(function(){
+      $('.social-media .facebook').hover(function(){
+        $(".qr-code").css({"display":"block"})
+      },function(){
+        $(".qr-code").css({"display":"none"})
+      });
+    })
+  </script>
