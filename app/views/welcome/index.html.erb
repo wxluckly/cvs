@@ -39,32 +39,35 @@
               <a href="/nodes/76">尝试21天挑战？</a>
             </h2>
 
-
             <p>我们在这里帮你“尝试素食”一个月或一周</p>
             <a href="/nodes/76" class="button try-it__button">去看看!</a>
           </aside>
 
           <div class="page-content index-page-content">
-            <div class="block-list__panel index-block-list">
-              <div class="block-list__image">
-                <a href="javascript:void(0)"><%= image_tag "origin/WhyGoVegan_724x352.jpg", width: "724px", height: "352px" ,alt:"" ,typeof:"foaf:Image" %></a>
-              </div>  
-              <h2 class="block-list__title"><a href="/nodes/19">为什么选择素食</a></h2>  
-              <div class="block-list__excerpt">
-                <p>对动物以及我们的地球来说，素食是更健康、更绿色、更环保的饮食方式</p>
-              </div>  
-            </div>
-            <div class="block-list__panel index-block-list">
-              <div class="block-list__image">
-                <a href="javascript:void(0)"><%= image_tag "origin/Definition_724x352.jpg", width: "724px", height: "352px" ,alt:"" ,typeof:"foaf:Image" %></a>
-              </div>  
-              <h2 class="block-list__title"><a href="/nodes/18">素食主义的定义</a></h2>  
-              <div class="block-list__excerpt">
-                <p>什么是素食者？什么是素食？素食主义意味着什么？</p>
-              </div>  
-            </div>
-          </div>
 
+            <% node = Node.find(19) %>
+            <div class="block-list__panel index-block-list">
+              <div class="block-list__image">
+                <a href="/nodes/<%= node.id %>"><%= image_tag node.cover_url(:on_use), width: 724, height: 352, typeof: "foaf:Image" %></a>
+              </div>  
+              <h2 class="block-list__title"><a href="/nodes/<%= node.id %>"><%= node.title %></a></h2>  
+              <div class="block-list__excerpt">
+                <p><%= node.desc %></p>
+              </div>  
+            </div>
+
+            <% node = Node.find(18) %>
+            <div class="block-list__panel index-block-list">
+              <div class="block-list__image">
+                <a href="/nodes/<%= node.id %>"><%= image_tag node.cover_url(:on_use), width: 724, height: 352, typeof: "foaf:Image" %></a>
+              </div>  
+              <h2 class="block-list__title"><a href="/nodes/<%= node.id %>"><%= node.title %></a></h2>  
+              <div class="block-list__excerpt">
+                <p><%= node.desc %></p>
+              </div>  
+            </div>
+
+          </div>
         </div>
 
         <div class="container">
