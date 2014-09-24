@@ -12,6 +12,7 @@ class Node < ActiveRecord::Base
   # scopes ....................................................................
   PageType = [
     ["单页型", 'show'],
+    ["商品", 'show_product'],
     ["单列列表", 'show_list_single'],
     ["单列列表（大图）", 'show_list_single_big_img'],
     ["两列列表", 'show_list_double'],

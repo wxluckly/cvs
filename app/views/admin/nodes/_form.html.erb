@@ -8,8 +8,7 @@
 <%= f.input :parent_id, collection: Node.sellect_list, label: '父级文章或列表' %>
 <%= f.input :page_type, collection: Node::PageType, label: '展示类型' %>
 <%= f.input :content, as: :kindeditor, label: '内容', input_html: {window_onload: true, filterMode: false} %>
-
-<%= f.input :desc, label: '在列表时显示的简介' %>
+<%= f.input :product_id, collection: Product.sellect_list, label: '商品' %>
 
 <% if @node.cover_url(:thumb) %>
 <div class="control-group">
@@ -19,6 +18,7 @@
 </div>
 <% end %>
 <%= f.input :cover, label: '在列表时显示的图片' %>
+<%= f.input :desc, label: '在列表时显示的简介' %>
 
 <div class="control-group">
   <div class="controls">
@@ -31,19 +31,22 @@
 <script type="text/javascript">
 
   function adjust_node_content(){
-   if($("#node_page_type").val() == "show"){
-    $(".control-group.node_content").show();
-  }else{
     $(".control-group.node_content").hide();
-  }
-}
+    $(".control-group.node_product_id").hide();
 
-$(function(){
-  adjust_node_content();
-  
-  $("#node_page_type").change(function() {
+    if($("#node_page_type").val() == "show"){
+      $(".control-group.node_content").show();
+    }else if($("#node_page_type").val() == "show_product"){
+      $(".control-group.node_product_id").show();
+    }
+  }
+
+  $(function(){
     adjust_node_content();
-  });
-});  
+
+    $("#node_page_type").change(function() {
+      adjust_node_content();
+    });
+  });  
 </script>
 <% end %>
