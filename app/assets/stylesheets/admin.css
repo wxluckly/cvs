@@ -1,0 +1,18 @@
+/* page - company nodes manage */
+.checkbox + .checkbox { margin-top: -5px; }
+.module-company-nodes-manage-box .module-content{padding: 30px;}
+.module-company-nodes-manage-box .element-template{background: #f6f8fa;padding: 20px;margin-bottom: 20px;}
+.module-company-nodes-manage-box .move-nodes{border-radius: 5px;margin-left: -20px;}
+.module-company-nodes-manage-box .element-checkbox{border-left: solid 2px #e3e4e8;}
+.module-company-nodes-manage-box .checkbox{border-left: solid 2px #e3e4e8;padding: 5px 0 10px 35px;margin-bottom: 0;}
+.module-company-nodes-manage-box .checkbox1{border-left: 0;}
+.module-company-nodes-manage-box .checkbox2{margin-left: 35px;}
+.module-company-nodes-manage-box .checkbox3{margin-left: 70px;}
+.module-company-nodes-manage-box .checkbox4{margin-left: 105px;}
+.module-company-nodes-manage-box .checkbox5{margin-left: 140px;}
+.module-company-nodes-manage-box .checkbox6{margin-left: 175px;}
+.module-company-nodes-manage-box .checkbox7{margin-left: 210px;}
+.module-company-nodes-manage-box .checkbox8{margin-left: 245px;}
+.module-company-nodes-manage-box .checkbox9{margin-left: 280px;}
+.module-company-nodes-manage-box .checkbox10{margin-left: 315px;}
+/* /page - company nodes manage */

@@ -45,6 +45,10 @@ class Node < ActiveRecord::Base
     "#{'--' * depth}#{title}"
   end
 
+  def move(parent)
+    update! ancestry: parent.is_a?(Node) ? parent.child_ancestry : nil
+  end
+
   # protected instance methods ................................................
   protected
   def cb_set_descendants_banner

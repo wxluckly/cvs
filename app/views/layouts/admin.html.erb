@@ -21,6 +21,9 @@
             <li <% if current_page?(controller: 'nodes') %>class="active"<% end %>>
               <%= link_to "文章管理", admin_nodes_path %>
             </li>
+            <li <% if current_page?(controller: 'products') %>class="active"<% end %>>
+              <%= link_to "商品管理", admin_products_path %>
+            </li>
           </ul>
           <ul class="nav pull-right">
             <% if current_staffer and staffer_signed_in? %>

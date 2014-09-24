@@ -1,0 +1,18 @@
+<%= simple_form_for(@product, as: "product", url: @product.new_record? ? admin_products_path : admin_product_path(@product), html: {class: "form-horizontal"}) do |f| %>
+<% @product.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+<%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+<%= f.input :sku, label: '商品标识码' %>
+<%= f.input :price, label: '价格' %>
+<%= f.input :weight, label: '重量' %>
+<%= f.input :dimensions, label: '包装大小' %>
+<%= f.input :summary, label: '产品介绍' %>
+<%= f.input :stock, label: '库存' %>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.button :submit, "保存" %>
+  </div>
+</div>
+<% end %>

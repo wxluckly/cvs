@@ -1,29 +1,55 @@
-<%= link_to '添加', new_admin_node_path(category: params[:category]), class: 'pull-right btn btn-warning' %>
-<% if @nodes.present? %>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th><div class="text-center">类型<div></th>
-      <th>标题</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @nodes.each do |node| %>
-    <tr>
-      <td><div class="text-center"><i class="<% if node.page_type == "show" %>icon-file<% else %>icon-list<% end %>"></i><div></td>
-      <td><%= link_to node.title, node, target: "_blank" %></td>
-      <td>
-        <%= link_to '编辑', edit_admin_node_path(node, category: params[:category]) %>
-        <%= link_to '删除', admin_node_path(node, category: params[:category]), method: :delete, data: { confirm: '确定删除吗?' } %>
-      </td>
-    </tr>
+<div class="row">
+  <div class="span8 offset2"><h3 class="text-center">节点管理</h3></div><div class="span2 align-down"><%= link_to '添加节点', new_admin_node_path(node: params[:node]), class: 'pull-right btn btn-warning' %></div>
+  <div class="span12">
+    <%= form_tag admin_node_path("id"), method: "delete", id: "nodes" do %>
+    <div class="module-company-nodes-manage-box span12">
+      <div class="element-template">
+        <div class="element-checkbox">
+          <%= categories(@nodes).html_safe %>
+        </div>
+      </div>
+    </div>
+
+    <div class="span2"><button type="button" class="btn btn-default btn-sm" id="delete"><i class="fa fa-trash-o"></i> 删除所选节点</button></div>
+    <div class="span4">
+      <%= select_tag "parent_node_id", options_for_select(Node.sellect_list), prompt: "移动节点到....", class: 'form-control move-nodes' %>
+    </div>
+
     <% end %>
-  </tbody>
-</table>
-<%= will_paginate @nodes %>
-<% else %>
-<div>
- 暂无内容
+  </div>
 </div>
+
+<% content_for :script do %>
+<script>
+  $(function(){
+    $("#delete").click(function(){
+      $("#nodes input[name='_method']").attr("value", "delete")
+      if($("#nodes input:checked").length == 0){
+        alert("请选择要删除的节点");
+      }else{
+        if(confirm("确定删除吗?")){
+          $("#nodes").submit();
+        }
+      }
+    })
+
+    $("#parent_node_id").change(function(){
+      if($(this).val() != ""){
+        if($("#nodes input:checked").length == 0){
+          alert("请选择要移动的类别");
+          $("#parent_category_id option[value='']").attr("selected", "selected");
+        }else{
+          if(confirm("确定移动吗？")){
+            $("#nodes").attr("action", "<%= move_admin_nodes_path %>");
+            $("#nodes input[name='_method']").attr("value", "put");
+            $("#nodes").submit();
+          }else{
+            $("#parent_node_id option[value='']").attr("selected", "selected");
+          }
+        }
+      }
+    })
+    
+  })
+</script>
 <% end %>
