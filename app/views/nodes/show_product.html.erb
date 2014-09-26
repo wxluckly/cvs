@@ -30,37 +30,40 @@
           <div class="region region-content">
             <div id="node-442" class="node node-product node-promoted node-full clearfix" about="/shop/accessories/vegan-society-enamel-badge" typeof="sioc:Item foaf:Document">
               <div class="content clearfix">
-                <div class="product-info display-price uc-product-442"><span class="uc-price">£1.45</span></div>
-                <div class="product-info model"><span class="product-info-label">SKU:</span> <span class="product-info-value">AC-EB</span></div>
+                <div class="product-info display-price uc-product-442"><span class="uc-price">￥<%= @node.product.price %></span></div>
+                <div class="product-info model">
+                  <span class="product-info-label">货号:</span> 
+                  <span class="product-info-value"><%= @node.product.sku %></span>
+                </div>
                 <div class="field field-name-body field-type-text-with-summary field-label-hidden">
                   <div class="field-items">
                     <div class="field-item even" property="content:encoded">
-                      <p>Show your support for The Vegan Society by purchasing and wearing this enamel badge displaying our logo. It is a small brooch style pin badge measuring approximately 20mm x 15mm.</p>
+                      <%= @node.product.summary %>
                     </div>
                   </div>
                 </div>
-                <div class="product-info list-price"><span class="uc-price-label">List price:</span> <span class="uc-price">£0.00</span></div>
+                <div class="product-info list-price"><span class="uc-price-label">价格:</span> <span class="uc-price">￥<%= @node.product.price %></span></div>
                 <div class="field field-name-field-image field-type-image field-label-hidden">
                   <div class="field-items">
-                    <div class="field-item even"><a href="http://www.vegansociety.com/sites/default/files/AC-EB.jpg" title="The Vegan Society Enamel Badge" class="colorbox init-colorbox-processed cboxElement" rel="gallery-node-442"><img typeof="foaf:Image" src="http://www.vegansociety.com/sites/default/files/AC-EB.jpg" width="419" height="204" alt="" title=""></a>
+                    <div class="field-item even">
+                    <a href="<%= image_url @node.cover_url(:on_use) %>" title="The Vegan Society Enamel Badge" class="colorbox init-colorbox-processed cboxElement" rel="gallery-node-442">
+                        <img typeof="foaf:Image" src="<%= image_url @node.cover_url(:on_use) %>" width="419" height="204" alt="" title="">
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="product-info sell-price"><span class="uc-price-label">Price:</span> <span class="uc-price">£1.45</span></div>
-                <div class="uc-product-442 product-info weight"><span class="product-info-label">Weight:</span> <span class="product-info-value">0.1 kg</span></div>
-                <div class="product-info dimensions"><span class="product-info-label">Dimensions:</span> <span class="product-info-value">0 cm × 2 cm × 1.5 cm</span></div>
+                <div class="product-info sell-price"><span class="uc-price-label">价格 :</span> <span class="uc-price">￥<%= @node.product.price %></span></div>
+                <div class="uc-product-442 product-info weight"><span class="product-info-label">重量 :</span> <span class="product-info-value"><%= @node.product.weight %> kg</span></div>
+                <div class="product-info dimensions"><span class="product-info-label">规格 :</span> <span class="product-info-value"><%= @node.product.dimensions %></span></div>
                 <div class="add-to-cart">
                   <form action="/shop/accessories/vegan-society-enamel-badge" method="post" id="uc-product-add-to-cart-form-442" accept-charset="UTF-8" class="uc-out-stock-processed">
                     <div>
                       <div class="form-item form-type-uc-quantity form-item-qty">
-                        <label for="edit-qty">Quantity <span class="form-required" title="This field is required.">*</span></label>
-                        <input type="text" id="edit-qty" name="qty" value="1" size="5" maxlength="6" class="form-text required"><div class="uc-out-of-stock-instock">584 in stock</div>
+                        <label for="edit-qty">库存 <span class="form-required" title="This field is required.">*</span></label>
+                        <input type="text" id="edit-qty" name="qty" value="1" size="5" maxlength="6" class="form-text required">
+                        <div class="uc-out-of-stock-instock">584 in stock</div>
                       </div>
                       <input type="hidden" name="form_build_id" value="form-fTL3Kon8YfrM8wOsG7-75o8xbQGi5aXlzxW9fEa5NFA">
-                      <input type="hidden" name="form_id" value="uc_product_add_to_cart_form_442">
-                      <div class="form-actions form-wrapper" id="edit-actions"><input class="node-add-to-cart form-submit" type="submit" id="edit-submit-442" name="op" value="Add to cart">
-                        <div class="uc_out_of_stock_html"></div>
-                      </div>
                     </div>
                   </form>
                 </div>  

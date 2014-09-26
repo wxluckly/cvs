@@ -64,6 +64,6 @@ class Admin::NodesController < Admin::BaseController
 
   private
   def node_params
-    params.require(:node).permit(:content, :title, :sub_title, :banner_type, :parent_id, :page_type, :cover, :desc, :banner_id)
+    params.require(:node).permit(:content, :title, :sub_title, :banner_type, :parent_id, :page_type, :cover, :desc, :banner_id, :product_id)
   end
 end
