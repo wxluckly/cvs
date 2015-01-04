@@ -19,6 +19,7 @@
       
       <div class="site-nav">
         <ul class="site-nav__item">
+          <li class="menu-1092 first"><a href="/" title=""<% if current_page?("/") %>class="active-trail"<% end %>>首页</a></li>
           <li class="menu-1092 first"><a href="/nodes/60" title=""<% if @node && (@node.id == 60 || @node.ancestor_ids.include?(60)) %>class="active-trail"<% end %>>最新消息</a></li>
           <li class="menu-1027"><a href="/nodes/55" title=""<% if @node && (@node.id == 55 || @node.ancestor_ids.include?(55)) %>class="active-trail"<% end %>>尝试VEGAN</a></li>
           <li class="menu-1034"><a href="/nodes/56" title="" <% if @node && (@node.id == 56 || @node.ancestor_ids.include?(56)) %>class="active-trail"<% end %>>加素行动</a></li>
