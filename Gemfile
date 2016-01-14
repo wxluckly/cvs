@@ -1,11 +1,11 @@
-﻿source 'http://ruby.taobao.org'
+﻿source 'https://ruby.taobao.org'
 
 # ruby '2.1'
 
 gem 'rails', '4.1.4'
 
 # 数据库
-gem 'mysql2', '0.3.16'
+gem 'mysql2', '0.3.20'
 
 # 资源
 gem 'sass-rails', '4.0.3'
